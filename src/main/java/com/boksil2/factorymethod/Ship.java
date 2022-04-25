@@ -1,9 +1,15 @@
 package com.boksil2.factorymethod;
 
+import com.boksil2.abstractfactory.Anchor;
+import com.boksil2.abstractfactory.Wheel;
+
 public class Ship {
     private String name;
     private String logo;
     private String color;
+
+    private Anchor anchor;
+    private Wheel wheel;
 
     @Override
     public String toString() {
@@ -36,5 +42,21 @@ public class Ship {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Anchor getAnchor() {
+        return anchor;
+    }
+
+    public void setAnchor(Anchor anchor) {
+        this.anchor = anchor;
+    }
+
+    public Wheel getWheel() {
+        return wheel;
+    }
+
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
     }
 }
