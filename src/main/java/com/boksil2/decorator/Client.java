@@ -9,6 +9,7 @@ public class Client {
     }
 
     public void writeComment(String comment) {
+        System.out.println(comment);
         commentService.addComment(comment);
     }
 

@@ -7,6 +7,7 @@ public class TrimmingCommentDecorator extends CommentDecorator {
     }
 
     public void addComment(String comment) {
+        System.out.println(1);
         super.addComment(trim(comment));
     }
 

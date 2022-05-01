@@ -7,6 +7,7 @@ public class SpamFilteringCommentDecorator extends CommentDecorator {
     }
     
     public void addComment(String comment) {
+        System.out.println(2);
         if(isNotSpam(comment)) {
             super.addComment(comment);
         }

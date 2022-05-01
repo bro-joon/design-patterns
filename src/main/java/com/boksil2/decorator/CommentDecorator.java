@@ -9,6 +9,7 @@ public class CommentDecorator implements CommentService{
     }
 
     public void addComment(String comment) {
+        System.out.println("addComment");
         commentService.addComment(comment);
     }
 }

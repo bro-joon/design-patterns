@@ -9,15 +9,15 @@ public class App {
 
     public static void main(String[] args) {
         CommentService commentService = new DefaultCommentService();
-
+        System.out.println(commentService);
         if(enabledSpamFilter) {
             commentService = new SpamFilteringCommentDecorator(commentService);
         }
-
+        System.out.println(commentService);
         if(enabledTrimming) {
             commentService = new TrimmingCommentDecorator(commentService);
         }
-
+        System.out.println(commentService);
         Client client = new Client(commentService);
 
         client.writeComment("오징어게임");
