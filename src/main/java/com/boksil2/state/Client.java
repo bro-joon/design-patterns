@@ -1,24 +1,20 @@
 package com.boksil2.state;
 
-import java.util.ArrayList;
-
 public class Client {
     public static void main(String[] args) {
-        Student student = new Student("whiteship");
         OnlineCourse onlineCourse = new OnlineCourse();
-
+        Student student = new Student("whiteship");
         Student keesun = new Student("keesun");
-        keesun.addPrivateCourse(onlineCourse);
+        keesun.add(onlineCourse);
 
         onlineCourse.addStudent(student);
-        onlineCourse.changeState(OnlineCourse.State.PRIVATE);
+        onlineCourse.changeState(new Private(onlineCourse));
+        onlineCourse.addReview("hello", student);
 
         onlineCourse.addStudent(keesun);
 
-        onlineCourse.addReview("hello", student);
-
+        System.out.println(onlineCourse.getReviews());
         System.out.println(onlineCourse.getState());
         System.out.println(onlineCourse.getStudents());
-        System.out.println(onlineCourse.getReviews());
     }
 }
